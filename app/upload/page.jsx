@@ -6,6 +6,7 @@ import contractABI from "@/contract/contractAbi.json";
 
 const Page = () => {
   const { provider, wallet } = useWeb3Provider();
+
   const [patientIndex, setPatientIndex] = useState(0);
   const [patientCount, setPatientCount] = useState(0);
   const [patientId, setPatientId] = useState("");
@@ -25,7 +26,7 @@ const Page = () => {
   console.log("selectedDisease", selectedDisease);
   console.log("medications", medications);
 
-  const contractAddress = "0x3b9B2e444d85a5daDB5809c148D4922B925bFBD8";
+  const contractAddress = "0x3C2bB9eB6E16999cdAeF968B20fD7580a6d412ce";
 
   const Contract = new ethers.Contract(contractAddress, contractABI, provider);
 

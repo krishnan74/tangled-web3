@@ -38,6 +38,51 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getAllPatients",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "patientID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "patientName",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "diagnosisID",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "gender",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "age",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "medicationsIDs",
+            "type": "uint256[]"
+          }
+        ],
+        "internalType": "struct Patient.PatientDetails[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",

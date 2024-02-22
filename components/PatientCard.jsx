@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const PatientCard = (props) => {
   return (
@@ -26,6 +27,9 @@ const PatientCard = (props) => {
           ? props.medications.join(", ")
           : "No medications prescribed."}
       </p>
+      <Link href={`/patient/${props.id}`}>
+        <button className="text-blue-500">View Details</button>
+      </Link>
     </div>
   );
 };

@@ -46,19 +46,19 @@ const Navbar = () => {
         <Link
           href={"/upload"}
           className={`px-3 py-1 ${
-            isCurrentTab("/web3") ? "border-b-2 border-[#4F86E7]" : ""
+            isCurrentTab("/upload") ? "border-b-2 border-[#4F86E7]" : ""
           }`}
         >
           Upload
         </Link>
 
         <Link
-          href={"/retrieve"}
+          href={"/mypatients"}
           className={`px-3 py-1 ${
-            isCurrentTab("/retrieve") ? "border-b-2 border-[#4F86E7]" : ""
+            isCurrentTab("/mypatients") ? "border-b-2 border-[#4F86E7]" : ""
           }`}
         >
-          Retrieve
+          My Patients
         </Link>
 
         <Link
@@ -70,8 +70,8 @@ const Navbar = () => {
           ChatBot
         </Link>
       </div>
-      <div className="flex justify-end items-center">
-        <button onClick={connectWallet}>Connect</button>
+      <div className="flex justify-end items-center bg-[#4F86E7] text-white px-5 py-2 rounded-lg">
+        <button onClick={connectWallet}>Connect Wallet</button>
       </div>
     </div>
   );

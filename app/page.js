@@ -67,7 +67,7 @@ const Page = () => {
       <div className="relative" onMouseMove={handleMouseMove}>
         <BubblesHome />
         <div className="z-10">
-          <p className="text-7xl text-center text-[#212121] font-semibold mt-32 tracking-wide">
+          <p className="text-7xl text-center text-[#212121] font-semibold mt-24 tracking-wide">
             Decentralized
           </p>
 
@@ -99,6 +99,15 @@ const Page = () => {
               </p>
             </div>
           </section>
+
+          <div className="flex justify-center">
+            <button
+              onClick={() => (window.location.href = "/web3")}
+              className="bg-[#4F86E7] text-white font-semibold py-4 px-10  mb-[60px] rounded-full"
+            >
+              Get Started
+            </button>
+          </div>
         </div>
 
         <div className="flex justify-around mb-32">
@@ -127,55 +136,69 @@ const Page = () => {
 
         <PrimaryFeatures />
 
-        <div className="flex mb-10 mt-20 justify-around">
-          <div className="flex flex-col w-1/2">
-            <div>
-              <p className="text-7xl text-center text-[#212121] font-semibold tracking-wide">
-                How it works?
-              </p>
-            </div>
+        <div className="flex flex-col mt-32 mb-32">
+          <div className="flex justify-center">
+            <h2 className="font-display text-3xl tracking-tight text-black sm:text-4xl md:text-5xl">
+              How it works ?
+            </h2>
+          </div>
 
-            <div className="mt-10">
-              <p className="text-left text-1xl px-[40px] text-gray-600">
-                1) Data entered by doctors is uploaded into the DApp as a file{" "}
-                <br></br>2 )The uploaded file is then encrypted using a unique
-                cryptographic public-key encryption technique<br></br>
-                3, 4 )IPFS hash code for the encrypted file is sent to the Cloud
-                <br></br>5 )Processed file is stored in the form of Directed
-                Acyclic Graph data structure where the contents are sent through
-                the IPFS to the blockchain <br></br>6 )Status of the file
-                storage is notified and the status update is given to contract{" "}
-                <br></br>7 )The data stored in the cloud is then utilized by a
-                machine learning model to predict the diagnosis <br></br>8
-                )Smart Contract is deployed and the transaction is sent to the
-                BlockChain <br></br>9 )With the status of the transaction being
-                notified to the app <br></br>11, 12 )An NFT is generated
-                automatically for a proof of the user when that hash code is
-                entered will be checked and validated <br></br>13 )The
-                verification of the user status is updated through the smart
-                contract <br></br>14 )Finally,Verification of the user data is
-                approved or disapproved based on the validation
+          <div className="mt-10 flex px-[10%] gap-10">
+            <div className=" w-[50%] rounded-lg  flex justify-center ">
+              <img
+                src={"/sys_arch.png"}
+                className="border-2  p-5 rounded-lg object-contain"
+              />
+            </div>
+            <div className="w-[50%] py-10">
+              <p className="text-left text-md px-10 text-gray-600">
+                <ol className="list-decimal ">
+                  <li>
+                    Data entered by doctors is uploaded into the DApp as a file
+                  </li>
+                  <li>
+                    The uploaded file is then encrypted using a unique
+                    cryptographic public-key encryption technique
+                  </li>
+                  <li>
+                    IPFS hash code for the encrypted file is sent to the Cloud
+                  </li>
+                  <li>
+                    Processed file is stored in the form of Directed Acyclic
+                    Graph data structure where the contents are sent through the
+                    IPFS to the blockchain
+                  </li>
+                  <li>
+                    Status of the file storage is notified and the status update
+                    is given to contract
+                  </li>
+                  <li>
+                    The data stored in the cloud is then utilized by a machine
+                    learning model to predict the diagnosis
+                  </li>
+                  <li>
+                    Smart Contract is deployed and the transaction is sent to
+                    the BlockChain
+                  </li>
+                  <li>
+                    With the status of the transaction being notified to the app
+                  </li>
+                  <li>
+                    An NFT is generated automatically for a proof of the user
+                    when that hash code is entered will be checked and validated
+                  </li>
+                  <li>
+                    The verification of the user status is updated through the
+                    smart contract
+                  </li>
+                  <li>
+                    Finally, Verification of the user data is approved or
+                    disapproved based on the validation
+                  </li>
+                </ol>
               </p>
             </div>
           </div>
-
-          <div className="mr-[80px] w-full bg-white rounded-lg py-9 h-[700px] flex justify-center arch_div shadow-lg">
-            <Image
-              src={"/sys_arch.png"}
-              height={"900"}
-              width={"900"}
-              className="border-2  p-5 rounded-lg"
-            />
-          </div>
-        </div>
-
-        <div className="flex justify-center">
-          <button
-            onClick={() => (window.location.href = "/web3")}
-            className="bg-[#4F86E7] text-white font-semibold py-4 px-10  mb-[60px] rounded-full"
-          >
-            Get Started
-          </button>
         </div>
       </div>
     </>

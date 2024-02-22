@@ -1,19 +1,19 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { ethers } from "ethers";
 import { useWeb3Provider } from "@/context/Web3ProviderContext";
 import contractABI from "@/contract/contractAbi.json";
+import contractAddress from "@/contract/contractAddress";
 
 const Page = () => {
   const { provider, wallet } = useWeb3Provider();
 
   const [patientIndex, setPatientIndex] = useState(0);
-  const [patientCount, setPatientCount] = useState(0);
-  const [patientId, setPatientId] = useState("");
+
   const [patientName, setPatientName] = useState("");
 
   const [diagnosisID, setDiagnosisID] = useState("");
-  const [selectedDisease, setSelectedDisease] = useState("");
 
   const [patientGender, setPatientGender] = useState("");
   const [patientAge, setPatientAge] = useState("");
@@ -22,22 +22,14 @@ const Page = () => {
   const [diseaseOptions, setDiseaseOptions] = useState([]);
   const [medicationOptions, setMedicationOptions] = useState([]);
 
-  console.log("diagnosisID", diagnosisID);
-  console.log("selectedDisease", selectedDisease);
-  console.log("medications", medications);
-
-  const contractAddress = "0x3C2bB9eB6E16999cdAeF968B20fD7580a6d412ce";
-
   const Contract = new ethers.Contract(contractAddress, contractABI, provider);
 
-  // Disease mapping
   const diseaseMapping = {
     1: "Flu",
     2: "Common Cold",
     3: "COVID-19",
   };
 
-  // Medication mapping
   const medicationMapping = {
     101: "Dolo",
     102: "Paracetamol",
@@ -61,19 +53,15 @@ const Page = () => {
     120: "Antiparasitics",
     121: "Antiretrovirals",
     122: "Antimalarials",
-
-    // Add more medication IDs and names here as needed
   };
 
   useEffect(() => {
-    // Set disease options for dropdown
     const options = Object.keys(diseaseMapping).map((id) => ({
       id,
       name: diseaseMapping[id],
     }));
     setDiseaseOptions(options);
 
-    // Set medication options for suggestion
     const meds = Object.keys(medicationMapping).map(
       (id) => medicationMapping[id]
     );
@@ -82,12 +70,10 @@ const Page = () => {
 
   const handleAddMedication = () => {
     if (medicationInput.trim() !== "") {
-      // Find the ID of the medication based on its name
       const medicationId = Object.keys(medicationMapping).find(
         (key) => medicationMapping[key] === medicationInput.trim()
       );
 
-      // If medicationId is found, push it to the medications array
       if (medicationId) {
         setMedications([...medications, parseInt(medicationId)]);
         setMedicationInput("");
@@ -102,8 +88,11 @@ const Page = () => {
   };
 
   async function addPatientDetails() {
+    const patientId = uuidv4();
     const signer = provider.getSigner();
     const ContractWithSigner = Contract.connect(signer);
+
+    console.log(patientId);
 
     try {
       if (provider) {
@@ -113,37 +102,12 @@ const Page = () => {
           parseInt(diagnosisID),
           patientGender,
           parseInt(patientAge),
-          medications.map((medication) => parseInt(medication)) // Convert medications to integers
+          medications.map((medication) => parseInt(medication))
         );
         console.log(tx);
       }
     } catch (error) {
       console.error("Error uploading patient details:", error);
-    }
-  }
-
-  async function getPatientDetails() {
-    const signer = provider.getSigner();
-    const ContractWithSigner = Contract.connect(signer);
-
-    try {
-      if (provider) {
-        const tx = await ContractWithSigner.getPatientDetails(patientIndex);
-        console.log(tx);
-      }
-    } catch (error) {
-      console.error("Error uploading patient details:", error);
-    }
-  }
-
-  async function getMedications() {
-    try {
-      if (provider) {
-        const meds = await Contract.getMedications(patientId);
-        console.log("Medications:", meds);
-      }
-    } catch (error) {
-      console.error("Error getting medications:", error);
     }
   }
 
@@ -154,13 +118,6 @@ const Page = () => {
         <div className="flex flex-col gap-4">
           <input
             type="text"
-            value={patientId}
-            onChange={(e) => setPatientId(e.target.value)}
-            placeholder="Patient ID"
-            className="px-3 py-2 border rounded"
-          />
-          <input
-            type="text"
             value={patientName}
             onChange={(e) => setPatientName(e.target.value)}
             placeholder="Patient Name"
@@ -169,7 +126,6 @@ const Page = () => {
           <select
             onChange={(e) => {
               setDiagnosisID(e.target.value);
-              setSelectedDisease(diseaseMapping[e.target.value]);
             }}
             className="px-3 py-2 border rounded"
           >
@@ -238,13 +194,6 @@ const Page = () => {
           >
             Upload Patient Details
           </button>
-          <button
-            onClick={getPatientDetails}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-          >
-            Get Patient Details
-          </button>
-          <input type="number" placeholder="patientIndex" value={patientIndex} onChange={(e)=>setPatientIndex(e.target.value)}/>
         </div>
       </div>
     </div>

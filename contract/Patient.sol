@@ -35,7 +35,7 @@ contract Patient {
         return patientsByDoctor[msg.sender].length;
     }
 
-    function getPatientDetails(uint256 _index) public view returns (
+    function getPatientDetails(uint256 _patientID) public view returns (
         uint256 patientID,
         string memory patientName,
         uint256 diagnosisID,
@@ -43,9 +43,10 @@ contract Patient {
         uint256 age,
         uint256[] memory medicationsIDs
     ) {
-        require(_index < patientsByDoctor[msg.sender].length, "Patient index out of bounds");
-        PatientDetails memory patient = patientsByDoctor[msg.sender][_index];
-        return (
+        for (uint256 i = 0; i < patientsByDoctor[msg.sender].length; i++) {
+            if (_patientID == patientsByDoctor[msg.sender][i].patientID) {
+                PatientDetails memory patient = patientsByDoctor[msg.sender][i];
+                return (
             patient.patientID,
             patient.patientName,
             patient.diagnosisID,
@@ -53,17 +54,11 @@ contract Patient {
             patient.age,
             patient.medicationsIDs
         );
-    }
-
-    function getMedications(uint256 _patientID) public view returns (uint256[] memory) {
-        for (uint256 i = 0; i < patientsByDoctor[msg.sender].length; i++) {
-            if (_patientID == patientsByDoctor[msg.sender][i].patientID) {
-                return patientsByDoctor[msg.sender][i].medicationsIDs;
             }
+
+            
         }
         
-        uint256[] memory emptyArray;
-        return emptyArray;
     }
 
 }

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { createContext, useState, useContext } from "react";
 import { ethers } from "ethers";
 
@@ -20,11 +20,19 @@ export const Web3ProviderContextProvider = ({ children }) => {
         });
         setWallet(accounts[0]);
         const prov = new ethers.providers.Web3Provider(window.ethereum);
+        // localStorage.setItem("web3Provider", JSON.stringify(prov));
+        // localStorage.setItem("web3Wallet", JSON.stringify(wallet));
+
         setProvider(prov);
       } catch (error) {
         console.error(error);
       }
     }
+  };
+
+  const disconnectWallet = () => {
+    localStorage.removeItem("web3Provider");
+    setProvider(null);
   };
 
   return (

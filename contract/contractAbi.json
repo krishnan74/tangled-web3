@@ -2,9 +2,9 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
+        "internalType": "string",
         "name": "_patientID",
-        "type": "uint256"
+        "type": "string"
       },
       {
         "internalType": "string",
@@ -44,9 +44,9 @@
       {
         "components": [
           {
-            "internalType": "uint256",
+            "internalType": "string",
             "name": "patientID",
-            "type": "uint256"
+            "type": "string"
           },
           {
             "internalType": "string",
@@ -83,25 +83,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_patientID",
-        "type": "uint256"
-      }
-    ],
-    "name": "getMedications",
-    "outputs": [
-      {
-        "internalType": "uint256[]",
-        "name": "",
-        "type": "uint256[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "getPatientCount",
     "outputs": [
@@ -117,17 +98,17 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "_index",
-        "type": "uint256"
+        "internalType": "string",
+        "name": "_patientID",
+        "type": "string"
       }
     ],
     "name": "getPatientDetails",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "string",
         "name": "patientID",
-        "type": "uint256"
+        "type": "string"
       },
       {
         "internalType": "string",

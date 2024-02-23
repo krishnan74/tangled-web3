@@ -20,7 +20,7 @@ const features = [
   {
     title: "Decentralised Storage",
     description:
-      "Store your data in a decentralised way using IPFS.",
+      "Store your data in a decentralised way using IPFS and smart contract.",
     image: screenshotStorage,
   },
   {

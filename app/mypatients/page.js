@@ -43,7 +43,7 @@ const Page = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div>
-        <p className="mb-4">Connected Wallet: {wallet}</p>
+        <p className="mb-4">Your wallet address: {wallet}</p>
 
         <div className="grid grid-cols-3 gap-10">
           {patientsArray.map((patient, index) => (

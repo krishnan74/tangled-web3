@@ -62,6 +62,15 @@ const Navbar = () => {
         </Link>
 
         <Link
+          href={"/retrieve"}
+          className={`px-3 py-1 ${
+            isCurrentTab("/retrieve") ? "border-b-2 border-[#4F86E7]" : ""
+          }`}
+        >
+          Retrieve Data
+        </Link>
+
+        <Link
           href={"/chatbot"}
           className={`px-3 py-1 ${
             isCurrentTab("/chatbot") ? "border-b-2 border-[#4F86E7]" : ""

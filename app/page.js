@@ -188,11 +188,7 @@ const Page = () => {
                     the BlockChain.
                   </li>
                   <li>
-                    The status of the transaction being notified to the app.
-                  </li>
-                  <li>
-                    An NFT is generated automatically for a proof of the user
-                    when that hash code is entered will be checked and validated.
+                    The status of the transaction is notified to the app.
                   </li>
                   <li>
                     The verification of the user status is updated through the

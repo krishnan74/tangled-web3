@@ -53,12 +53,12 @@ const Card = (props) => {
             </button> */}
           </div>
           <div className="view-more">
-            <button
+            {/*<button
               className="view-more-button"
               onClick={() => (window.location.href = props.link)}
             >
               Try Now
-            </button>
+          </button>*/}
 
       
           </div>

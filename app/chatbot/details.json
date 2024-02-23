@@ -1,0 +1,98 @@
+{
+    "patients": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "age": 35,
+        "gender": "Male",
+        "diagnosis": "Hypertension",
+        "medications": ["Amlodipine", "Hydrochlorothiazide"],
+        "doctor_id": 101
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "age": 28,
+        "gender": "Female",
+        "diagnosis": "Type 2 Diabetes",
+        "medications": ["Metformin", "Insulin"],
+        "doctor_id": 102
+      },
+      {
+        "id": 3,
+        "name": "Bob Johnson",
+        "age": 45,
+        "gender": "Male",
+        "diagnosis": "Osteoarthritis",
+        "medications": ["Ibuprofen", "Glucosamine"],
+        "doctor_id": 103
+      }
+    ],
+    "doctors": [
+      {
+        "id": 101,
+        "name": "Dr. Smith",
+        "specialty": "Cardiologist"
+      },
+      {
+        "id": 102,
+        "name": "Dr. Johnson",
+        "specialty": "Endocrinologist"
+      },
+      {
+        "id": 103,
+        "name": "Dr. Davis",
+        "specialty": "Rheumatologist"
+      }
+    ],
+    "diseases": [
+      {
+        "id": 1,
+        "name": "Hypertension",
+        "description": "High blood pressure"
+      },
+      {
+        "id": 2,
+        "name": "Type 2 Diabetes",
+        "description": "Insulin resistance"
+      },
+      {
+        "id": 3,
+        "name": "Osteoarthritis",
+        "description": "Degenerative joint disease"
+      }
+    ],
+    "medicines": [
+      {
+        "id": "Amlodipine",
+        "name": "Amlodipine",
+        "type": "Antihypertensive"
+      },
+      {
+        "id": "Hydrochlorothiazide",
+        "name": "Hydrochlorothiazide",
+        "type": "Diuretic"
+      },
+      {
+        "id": "Metformin",
+        "name": "Metformin",
+        "type": "Antidiabetic"
+      },
+      {
+        "id": "Insulin",
+        "name": "Insulin",
+        "type": "Hormone"
+      },
+      {
+        "id": "Ibuprofen",
+        "name": "Ibuprofen",
+        "type": "Analgesic"
+      },
+      {
+        "id": "Glucosamine",
+        "name": "Glucosamine",
+        "type": "Joint supplement"
+      }
+    ]
+  }
+  

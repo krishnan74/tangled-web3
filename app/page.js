@@ -88,7 +88,7 @@ const Page = () => {
                 color: "transparent",
               }}
             >
-              Hack'o Holics
+            Revolutionizing Health Care
             </span>
           </p>
           <section className="py-16">
@@ -113,24 +113,26 @@ const Page = () => {
         <div className="flex justify-around mb-32">
           <CardGreen
             feature="Decentralized EHR"
-            description="Tangled stores the information about patients in IPFS"
+            description="Implementing IPFS for decentralization, accessibility and privacy"
             techstackimage="/solidity.png"
             techstack="Solidity"
             link="/web3"
           />
+          
           <CardGreen
-            feature="Predictive Analysis (AI)"
-            description="Tangled uses large dataset of patient's history and can predict diagnosis"
+            feature="Smart Contract"
+            description="Promoting interoperability and enhancing data integrity in healthcare systems"
+            techstackimage="/solidity.png"
+            techstack="Solidity"
+            link="#"
+          />
+
+          <CardGreen
+            feature="Chat Assistance (AI)"
+            description="Getting information, advice, and support through natural language conversations"
             techstackimage="/python.png"
             techstack="Python"
             link="/diagnose"
-          />
-          <CardGreen
-            feature="Anti Phobia (VR)"
-            description="Tangled helps people with phobia to overcome them using VR environment"
-            techstackimage="/unity.png"
-            techstack="Unity"
-            link="#"
           />
         </div>
 
@@ -154,46 +156,54 @@ const Page = () => {
               <p className="text-left text-md px-10 text-gray-600">
                 <ol className="list-decimal ">
                   <li>
-                    Data entered by doctors is uploaded into the DApp as a file
+                    The wallet is connected to the web app.
+                  </li>
+                  <li>
+                    The details regarding the patient is uploaded.
+                  </li>
+                  <li>
+                    Data entered by doctors is uploaded into the DApp.
                   </li>
                   <li>
                     The uploaded file is then encrypted using a unique
-                    cryptographic public-key encryption technique
+                    cryptographic public-key encryption technique.
                   </li>
                   <li>
-                    IPFS hash code for the encrypted file is sent to the Cloud
+                    IPFS hash code for the encrypted file is sent to the Cloud.
                   </li>
                   <li>
                     Processed file is stored in the form of Directed Acyclic
                     Graph data structure where the contents are sent through the
-                    IPFS to the blockchain
+                    IPFS to the blockchain.
                   </li>
                   <li>
                     Status of the file storage is notified and the status update
-                    is given to contract
+                    is given to contract.
                   </li>
                   <li>
-                    The data stored in the cloud is then utilized by a machine
-                    learning model to predict the diagnosis
+                    The data stored on-chain is the primary id of every attribute.
                   </li>
                   <li>
-                    Smart Contract is deployed and the transaction is sent to
-                    the BlockChain
+                    The smart Contract is deployed and the transaction is sent to
+                    the BlockChain.
                   </li>
                   <li>
-                    With the status of the transaction being notified to the app
+                    The status of the transaction being notified to the app.
                   </li>
                   <li>
                     An NFT is generated automatically for a proof of the user
-                    when that hash code is entered will be checked and validated
+                    when that hash code is entered will be checked and validated.
                   </li>
                   <li>
                     The verification of the user status is updated through the
-                    smart contract
+                    smart contract.
                   </li>
                   <li>
                     Finally, Verification of the user data is approved or
-                    disapproved based on the validation
+                    disapproved based on the validation.
+                  </li>
+                  <li>
+                    With the above data an AI assistant provides support.
                   </li>
                 </ol>
               </p>

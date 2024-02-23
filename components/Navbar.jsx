@@ -19,18 +19,17 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-around items-center h-[109px] bg-[#F0F9FF]">
-      <div className="flex justify-evenly w-[200px] items-center bg-[#4F86E7] font-bold text-white py-3 px-7 rounded-full text-3xl">
+      <div className="flex justify-evenly w-[200px] items-center  font-bold text-[#4F86E7] py-3 px-7 rounded-full ">
         <div className="">
           <Image
             src="/brain_white.png"
             width={80}
             height={80}
             alt="Picture of the author"
-            className="mr-8"
           />
         </div>
         <div>
-          <p>Tangled</p>
+          <p className="text-2xl">Tangled</p>
         </div>
       </div>
 

@@ -58,7 +58,7 @@ CORS(app, resources={r"/chatbot": {"origins": "http://localhost:3000"}})
 
 @app.route("/chatbot", methods=["POST"])
 def chatbot():
-    OPENAI_API_KEY = "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"
+    OPENAI_API_KEY = ""
     if request.method == "POST":
 
 

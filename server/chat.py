@@ -51,11 +51,6 @@ import os
 
 app = Flask(__name__)
 
-
-CORS(app, resources={r"/chatbot": {"origins": "http://localhost:3000"}})
-
-
-
 @app.route("/chatbot", methods=["POST"])
 def chatbot():
     OPENAI_API_KEY = ""
@@ -65,13 +60,17 @@ def chatbot():
         # Get the JSON data sent from the client
         data = request.get_json()
 
-        spec = JsonSpec(dict_=data, max_value_length=4000)
+        
+        user_input = data.get('userInput', '')
+        details = data.get('data', '')
+
+        spec = JsonSpec(dict_=details, max_value_length=4000)
         toolkit = JsonToolkit(spec=spec)
 
         agent = create_json_agent(llm=ChatOpenAI(openai_api_key=OPENAI_API_KEY, temperature=0, model="gpt-3.5-turbo"), toolkit=toolkit, max_iterations=1000, verbose=True)
 
         
-        response = agent.run("how many patients are there ?")
+        response = agent.run(user_input)
 
         return jsonify(response)
     

@@ -88,7 +88,7 @@ const Page = () => {
                 color: "transparent",
               }}
             >
-            Revolutionizing Health Care
+              Revolutionizing Health Care
             </span>
           </p>
           <section className="py-16">
@@ -118,7 +118,7 @@ const Page = () => {
             techstack="Solidity"
             link="/web3"
           />
-          
+
           <CardGreen
             feature="Smart Contract"
             description="Promoting interoperability and enhancing data integrity in healthcare systems"
@@ -155,15 +155,9 @@ const Page = () => {
             <div className="w-[50%] py-10">
               <p className="text-left text-md px-10 text-gray-600">
                 <ol className="list-decimal ">
-                  <li>
-                    The wallet is connected to the web app.
-                  </li>
-                  <li>
-                    The details regarding the patient is uploaded.
-                  </li>
-                  <li>
-                    Data entered by doctors is uploaded into the DApp.
-                  </li>
+                  <li>The wallet is connected to the web app.</li>
+                  <li>The details regarding the patient is uploaded.</li>
+                  <li>Data entered by doctors is uploaded into the DApp.</li>
                   <li>
                     The uploaded file is then encrypted using a unique
                     cryptographic public-key encryption technique.
@@ -181,15 +175,14 @@ const Page = () => {
                     is given to contract.
                   </li>
                   <li>
-                    The data stored on-chain is the primary id of every attribute.
+                    The data stored on-chain is the primary id of every
+                    attribute.
                   </li>
                   <li>
-                    The smart Contract is deployed and the transaction is sent to
-                    the BlockChain.
+                    The smart Contract is deployed and the transaction is sent
+                    to the BlockChain.
                   </li>
-                  <li>
-                    The status of the transaction is notified to the app.
-                  </li>
+                  <li>The status of the transaction is notified to the app.</li>
                   <li>
                     The verification of the user status is updated through the
                     smart contract.
@@ -198,9 +191,7 @@ const Page = () => {
                     Finally, Verification of the user data is approved or
                     disapproved based on the validation.
                   </li>
-                  <li>
-                    With the above data an AI assistant provides support.
-                  </li>
+                  <li>With the above data an AI assistant provides support.</li>
                 </ol>
               </p>
             </div>
